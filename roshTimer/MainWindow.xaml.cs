@@ -25,8 +25,8 @@ namespace roshTimer
 
         int timur;
         int microtimur;
-        const int roshMax = 20;//660
-        const int roshMin = 10;//480 
+        int roshMax = 660;//660
+        int roshMin = 480;//480 
         bool isTimerActive;
         bool minEnd = false;
 
@@ -131,12 +131,13 @@ namespace roshTimer
             ini = new Ini("settings.ini");
 
             SetSettings();
+          
         }
         void SetSettings()
         {
 
             SetWindowPos();
-
+            SetTimings();
             void SetWindowPos()
             {
                 if (ini.KeyExists("PositionLeft", "Main"))
@@ -147,6 +148,17 @@ namespace roshTimer
                     this.Top = double.Parse(ini.ReadINI("Main", "PositionTop"));
                 else
                     WritePos();
+            }
+            void SetTimings()
+            {
+                if (ini.KeyExists("MaxRoshan", "Roshan"))
+                    roshMax = int.Parse(ini.ReadINI("Roshan", "MaxRoshan"));
+                else
+                    ini.Write("Roshan", "MaxRoshan", roshMax.ToString());
+                if (ini.KeyExists("MinRoshan", "Roshan"))
+                    roshMin = int.Parse(ini.ReadINI("Roshan", "MinRoshan"));
+                else
+                    ini.Write("Roshan", "MinRoshan", roshMin.ToString());
             }
         }
         void WritePos()
