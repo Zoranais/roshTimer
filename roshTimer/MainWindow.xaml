@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:tb="http://www.hardcodet.net/taskbar"
         xmlns:local="clr-namespace:roshTimer"
         mc:Ignorable="d"
         Title="roshTimer" Height="80" Width="146"
@@ -12,9 +13,22 @@
         ResizeMode="NoResize"
         WindowStartupLocation="Manual"
         Top="0"
-        Left="0">
-    <Grid>
-        <Border>
+        Left="0" ShowInTaskbar="False" Icon="/img/roshIcon.ico"><Grid>
+    <tb:TaskbarIcon x:Name="roshIcon"
+                    Visibility="Visible"
+                    ToolTipText="Right click to open settings"
+                    MenuActivation="RightClick" 
+                    IconSource="/img/roshIcon.ico"
+                    >
+        
+            <tb:TaskbarIcon.ContextMenu>
+                <ContextMenu>
+                    <MenuItem x:Name="SettingsButton" Header= "Settings" Click="SettingsButton_Click" > </MenuItem>
+                    <MenuItem x:Name="ExitButton" Header="Exit" Click="ExitButton_Click" />
+                </ContextMenu>
+            </tb:TaskbarIcon.ContextMenu> 
+    </tb:TaskbarIcon>
+                <Border>
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="85*"/>

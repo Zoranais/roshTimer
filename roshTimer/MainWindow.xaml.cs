@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
-
+using Hardcodet.Wpf.TaskbarNotification;
 namespace roshTimer
 {
     public partial class MainWindow : Window
@@ -22,19 +22,19 @@ namespace roshTimer
         SoundPlayer sound;
         DispatcherTimer timer;
         Ini ini;
-
         int timur;
         int microtimur;
         int roshMax = 660;//660
         int roshMin = 480;//480 
         bool isTimerActive;
         bool minEnd = false;
-
         public MainWindow()
         {
             InitializeComponent();
             Run();
+            
         }
+       
         void timer_tick(object sender, EventArgs e)
         {
             if (timur - 1 > roshMax - roshMin)
@@ -166,7 +166,21 @@ namespace roshTimer
             ini.Write("Main", "PositionLeft", this.Left.ToString());
             ini.Write("Main", "PositionTop", this.Top.ToString());
         }
-        
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("ffff");
+        }
+
+        private void SettingsButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ExitButton_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }   
     
 }
