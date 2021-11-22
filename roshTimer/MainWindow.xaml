@@ -42,13 +42,13 @@
                     <RowDefinition Height="0*"/>
                 </Grid.RowDefinitions>
 
-                <Image Source="/img/temelya.png" Stretch="Fill" Opacity="0.3" Height="80" VerticalAlignment="Top" Grid.RowSpan="3" Grid.ColumnSpan="2" />
+                <Image Source="/img/temelya.png" Stretch="Fill" Opacity="0.4" Height="80" VerticalAlignment="Top" Grid.RowSpan="3" Grid.ColumnSpan="2" />
 
                 <TextBlock x:Name="Timer" Text="11:00" Foreground="White" FontSize="40" MouseLeftButtonDown="Timer_MouseLeftButtonDown" Grid.Row="1" Grid.ColumnSpan="2"/>
 
-                <TextBlock x:Name="minTimer" Text="8:00" Foreground="Gray" FontSize="25" Grid.Row="1" Grid.Column="1" Margin="7,-8,0,0"/>
+                <TextBlock x:Name="minTimer" Text="8:00" Foreground="DarkGray" FontSize="25" Grid.Row="1" Grid.Column="1" Margin="7,-8,0,0"/>
                 <Border  MouseLeftButtonDown="Border_MouseLeftButtonDown" Grid.RowSpan="3" Grid.Column="0">
-                    <TextBlock x:Name="refresh" Text="Refresh" Foreground="Gray" FontSize="20" VerticalAlignment="Bottom" />
+                    <TextBlock x:Name="refresh" Text="Refresh" Foreground="DarkGray" FontSize="20" VerticalAlignment="Bottom" />
                 </Border>
                 <Rectangle Fill="Black" Opacity="0.5" Height="4" VerticalAlignment="Top" MouseLeftButtonDown="Rectangle_MouseLeftButtonDown" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
             </Grid>

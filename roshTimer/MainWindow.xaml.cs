@@ -174,7 +174,8 @@ namespace roshTimer
 
         private void SettingsButton_Click(object sender, RoutedEventArgs e)
         {
-
+            roshTimer.Windows.Settings settings= new Windows.Settings();
+            settings.Show();
         }
 
         private void ExitButton_Click(object sender, RoutedEventArgs e)
